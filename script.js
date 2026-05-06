@@ -17,12 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.target.id === 'skills') {
                     const fills = entry.target.querySelectorAll('.skeuo-fill');
                     fills.forEach(fill => {
-                        const width = fill.style.width;
+                        const targetWidth = fill.getAttribute('data-width');
                         fill.style.width = '0%';
+                        // Force reflow
+                        fill.offsetHeight;
                         setTimeout(() => {
-                            fill.style.width = width;
+                            fill.style.width = targetWidth;
                         }, 100);
                     });
+                    // Only animate once
+                    observer.unobserve(entry.target);
                 }
             }
         });

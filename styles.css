@@ -246,7 +246,7 @@ h4 {
 .nav-content {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -557,8 +557,17 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 16px;
+    }
+
     .name {
         font-size: 2.2rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
     }
 
     .nav-links {
@@ -567,7 +576,18 @@ h4 {
     }
 
     .glass-panel {
-        padding: 24px;
+        padding: 20px;
+        margin-bottom: 24px;
+        border-radius: 20px;
+    }
+
+    .skeuo-raised-card {
+        padding: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .timeline {
@@ -575,12 +595,20 @@ h4 {
     }
 
     .timeline-dot {
-        left: -34px;
+        left: -32px;
         width: 20px;
         height: 20px;
     }
 
     .timeline::before {
-        left: -25px;
+        left: -23px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-content {
+        padding: 24px 20px;
     }
 }
