@@ -32,22 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('section-visible');
                 // Optional: stop observing once it's visible
                 // observer.unobserve(entry.target);
-
-                // Trigger skill bar animations if in skills section
-                if (entry.target.id === 'skills') {
-                    const fills = entry.target.querySelectorAll('.skeuo-fill');
-                    fills.forEach(fill => {
-                        const targetWidth = fill.getAttribute('data-width');
-                        fill.style.width = '0%';
-                        // Force reflow
-                        fill.offsetHeight;
-                        setTimeout(() => {
-                            fill.style.width = targetWidth;
-                        }, 100);
-                    });
-                    // Only animate once
-                    observer.unobserve(entry.target);
-                }
             }
         });
     }, observerOptions);
